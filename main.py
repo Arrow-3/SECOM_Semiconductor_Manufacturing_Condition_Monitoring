@@ -5,8 +5,11 @@ from src.evaluation import evaluate_model
 
 print("=== SECOM Manufacturing Pipeline ===")
 
+train_path = "C:\Drive W\Machine Learning\Semiconductor Manufacturing\secom\secom.data"
+test_path = "C:\Drive W\Machine Learning\Semiconductor Manufacturing\secom\secom_labels.data"
+
 # Step 1: Load & preprocess
-X, y = load_and_preprocess("data/secom.data", "data/secom_labels.data")
+X, y = load_and_preprocess(train_path, test_path)
 
 # Step 2: Feature Selection
 X_selected = select_features(X, y, method="mutual_info", k=40)
